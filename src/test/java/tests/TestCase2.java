@@ -41,7 +41,7 @@ public class TestCase2 extends TestBasic{
     }
 
     @Step("Verify that 'Logged in as username' is visible")
-    private static void verifyLoginToYourAccountIsVisible() throws IOException, java.text.ParseException {
+    static void verifyLoginToYourAccountIsVisible() throws IOException, java.text.ParseException {
 
         String username = new LoginSignupPage(getDriver()).fillCorrectLogin(JSONReader.existingUser("email"),JSONReader.existingUser("password")).getUsername().getText();
         Assert.assertEquals(username,"Verify that 'Logged in as username' is visible");

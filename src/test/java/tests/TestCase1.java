@@ -55,7 +55,7 @@ public class TestCase1 extends TestBasic{
 
     }
     @Step("Verify 'New User Signup!' is visible")
-    public void verifyNewUserSignupIsVisible(){
+    public static void verifyNewUserSignupIsVisible(){
         String newUserSignupText = new HomePage(getDriver()).signupLoginClick().getNewUserSignup().getText();
         Assert.assertEquals(newUserSignupText,"New User Signup!","Verify 'New User Signup!' is visible");
 
