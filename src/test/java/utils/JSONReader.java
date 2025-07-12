@@ -12,14 +12,14 @@ public class JSONReader {
 
     public static String existingUser(String data) throws IOException, ParseException {
         JsonParser jsonParser = new JsonParser ();
-        FileReader fileReader = new FileReader("src\\test\\resources\\testData\\ExistingUser.json");
+        FileReader fileReader = new FileReader("src/resources/testdata/ExistingUser.json");
         Object obj = jsonParser.parse(fileReader);
         JsonObject existingUser = (JsonObject) obj;
         return existingUser.get(data).getAsString();
     }
     public static String accountDetails(String data) throws IOException, ParseException {
         JsonParser jsonParser = new JsonParser();
-        FileReader fileReader = new FileReader("src\\test\\resources\\testData\\AccountDetails.json");
+        FileReader fileReader = new FileReader("src/resources/testdata/AccountDetails.json");
         Object obj = jsonParser.parse(fileReader);
         JsonObject accountDetails = (JsonObject) obj;
         return accountDetails.get(data).getAsString();
@@ -27,7 +27,7 @@ public class JSONReader {
 
     public static String paymentDetails(String data) throws IOException, ParseException {
         JsonParser jsonParser = new JsonParser();
-        FileReader fileReader = new FileReader("src\\test\\resources\\testData\\PaymentDetails.json");
+        FileReader fileReader = new FileReader("src/resources/testdata/PaymentDetails.json");
         Object obj = jsonParser.parse(fileReader);
         JsonObject paymentDetails = (JsonObject) obj;
         return paymentDetails.get(data).getAsString();
@@ -35,7 +35,7 @@ public class JSONReader {
 
     public static String poloBrandProducts(String data) throws IOException, ParseException {
         JsonParser jsonParser = new JsonParser();
-        FileReader fileReader = new FileReader("src\\test\\resources\\testData\\PoloBrandProducts.json");
+        FileReader fileReader = new FileReader("src/resources/testdata/PoloBrandProducts.json");
         Object obj = jsonParser.parse(fileReader);
         JsonObject poloBrandProducts = (JsonObject) obj;
         return poloBrandProducts.get(data).getAsString();
@@ -43,7 +43,7 @@ public class JSONReader {
 
     public static String madameBrandProducts(String data) throws IOException, ParseException {
         JsonParser jsonParser = new JsonParser();
-        FileReader fileReader = new FileReader("src\\test\\resources\\testData\\MadameBrandProducts.json");
+        FileReader fileReader = new FileReader("src/resources/testdata/MadameBrandProducts.json");
         Object obj = jsonParser.parse(fileReader);
         JsonObject madameBrandProducts = (JsonObject) obj;
         return madameBrandProducts.get(data).getAsString();
