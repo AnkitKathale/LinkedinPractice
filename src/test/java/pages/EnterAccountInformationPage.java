@@ -105,6 +105,7 @@ public class EnterAccountInformationPage {
         address1Input.sendKeys(JSONReader.accountDetails("address1"));
         address2Input.sendKeys(JSONReader.accountDetails("address2"));
         Select countrySelector = new Select(countrySelect);
+        SeleniumHelper.waitForElementToBeClickable(driver,countrySelect);
         countrySelector.selectByValue(JSONReader.accountDetails("country"));
         stateInput.sendKeys(JSONReader.accountDetails("state"));
         cityInput.sendKeys(JSONReader.accountDetails("city"));
