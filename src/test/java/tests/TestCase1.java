@@ -49,7 +49,7 @@ public class TestCase1 extends TestBasic{
 
     }
     @Step("Verify that home page is visible successfully")
-    public void verifyThatHomePageIsVisibleSuccessfully(){
+    public static void verifyThatHomePageIsVisibleSuccessfully(){
         boolean homePageVisible = new HomePage(getDriver()).homePageIsVisible().isDisplayed();
         Assert.assertTrue(homePageVisible,"Verify that home page is visible successfully");
 
