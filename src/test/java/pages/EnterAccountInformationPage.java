@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import utils.JSONReader;
+import utils.SeleniumHelper;
 import utils.Util;
 
 import java.io.IOException;
@@ -83,14 +84,18 @@ public class EnterAccountInformationPage {
     }
 
     public AccountCreatedPage fillAccountDetails() throws IOException, ParseException {
+
         String password = "pass" + Util.generateCurrentDateAndTime();
         titleMrCheckbox.click();
         passwordInput.sendKeys(password);
         Select days = new Select(daysSelect);
+        SeleniumHelper.waitForElementToBeClickable(driver,daysSelect);
         days.selectByValue(JSONReader.accountDetails("day"));
         Select months = new Select(monthsSelect);
+        SeleniumHelper.waitForElementToBeClickable(driver,monthsSelect);
         months.selectByValue(JSONReader.accountDetails("month"));
         Select years = new Select(yearsSelect);
+        SeleniumHelper.waitForElementToBeClickable(driver,yearsSelect);
         years.selectByValue(JSONReader.accountDetails("year"));
         newsletterCheckbox.click();
         specialOffersCheckbox.click();
