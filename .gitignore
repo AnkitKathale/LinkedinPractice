@@ -11,6 +11,9 @@ target/
 *.iws
 *.iml
 *.ipr
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries/
 
 ### Eclipse ###
 .apt_generated
@@ -36,3 +39,4 @@ build/
 
 ### Mac OS ###
 .DS_Store
+automation_exercise/.idea/workspace.xml

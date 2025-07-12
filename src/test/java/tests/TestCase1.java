@@ -38,7 +38,14 @@ public class TestCase1 extends TestBasic{
             17. Click 'Delete Account' button
             18. Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button""")
 
-   public void registerUser(){
+   public void registerUser() throws IOException, ParseException {
+        verifyThatHomePageIsVisibleSuccessfully();
+        verifyNewUserSignupIsVisible();
+        verifyThatEnterAccountInformationIsVisible();
+        verifyThatAccountCreatedIsVisible();
+        verifyThatLoggedInAsUsernameIsVisible();
+        verifyThatAccountDeletedIsVisibleAndClickContinueButton();
+
 
     }
     @Step("Verify that home page is visible successfully")
