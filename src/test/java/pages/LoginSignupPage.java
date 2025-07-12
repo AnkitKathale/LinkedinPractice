@@ -48,6 +48,9 @@ public class LoginSignupPage extends TestBasic {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
+    public WebElement getNewUserSignup() {
+        return newUserSignup;
+    }
     private void fillSignup(String name, String email) {
         signupNameInput.sendKeys(name);
         signupEmailInput.sendKeys(email);

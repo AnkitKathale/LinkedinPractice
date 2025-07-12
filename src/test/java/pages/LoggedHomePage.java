@@ -35,4 +35,6 @@ public class LoggedHomePage {
         logoutButton.click();
         return new LoginSignupPage(driver);
     }
+
+
 }
