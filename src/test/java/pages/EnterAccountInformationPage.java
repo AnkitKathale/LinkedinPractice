@@ -1,8 +1,10 @@
 package pages;
 
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
@@ -105,7 +107,11 @@ public class EnterAccountInformationPage {
         address1Input.sendKeys(JSONReader.accountDetails("address1"));
         address2Input.sendKeys(JSONReader.accountDetails("address2"));
         Select countrySelector = new Select(countrySelect);
+        Actions actions = new Actions(driver);
+        actions.scrollByAmount(0,-800);
         SeleniumHelper.waitForElementToBeClickable(driver,countrySelect);
+        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", countrySelect);
+        countrySelect.click();
         countrySelector.selectByValue(JSONReader.accountDetails("country"));
         stateInput.sendKeys(JSONReader.accountDetails("state"));
         cityInput.sendKeys(JSONReader.accountDetails("city"));
