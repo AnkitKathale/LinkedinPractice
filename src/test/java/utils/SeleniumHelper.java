@@ -39,4 +39,22 @@ public class SeleniumHelper {
         FileUtils.copyFile(file, new File(path));
         return path;
     }
+    public static void scrollAndClick(WebDriver driver,WebElement element){
+        try {
+            // Scroll element into view
+            ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+
+            // Optional: small pause to let any sticky banners move
+            Thread.sleep(300);
+
+            // Try normal click
+            element.click();
+
+        } catch (Exception e) {
+            System.out.println("Normal click failed, trying JS click. Reason: " + e.getMessage());
+
+            // Fallback: force JS click
+            ((JavascriptExecutor) driver).executeScript("arguments[0].click();", element);
+        }
+    }
 }

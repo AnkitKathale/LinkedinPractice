@@ -110,7 +110,7 @@ public class EnterAccountInformationPage {
         Actions actions = new Actions(driver);
         actions.scrollByAmount(0,-800);
         SeleniumHelper.waitForElementToBeClickable(driver,countrySelect);
-        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", countrySelect);
+        SeleniumHelper.scrollAndClick(driver,countrySelect);
         countrySelect.click();
         countrySelector.selectByValue(JSONReader.accountDetails("country"));
         stateInput.sendKeys(JSONReader.accountDetails("state"));
