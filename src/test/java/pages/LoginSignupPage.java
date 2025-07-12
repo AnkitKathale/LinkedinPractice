@@ -6,6 +6,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import tests.TestBasic;
 import utils.JSONReader;
+import utils.SeleniumHelper;
 
 import java.io.IOException;
 import java.text.ParseException;
@@ -15,7 +16,7 @@ public class LoginSignupPage extends TestBasic {
     @FindBy(css = "div[class='login-form'] h2")
     private WebElement loginToYourAccount;
 
-    @FindBy(css = "input[data-qa='login-email']")
+    @FindBy(xpath = "//input[@data-qa='login-email']")
     private WebElement loginEmailInput;
 
     @FindBy(css = "input[data-qa='login-password']")
@@ -70,12 +71,15 @@ public class LoginSignupPage extends TestBasic {
     }
 
     private void fillLogin(String email, String password) {
+        SeleniumHelper.waitForElementToBeVisible(driver,loginEmailInput);
         loginEmailInput.sendKeys(email);
+
         loginPasswordInput.sendKeys(password);
         loginButton.click();
     }
 
     public LoggedHomePage fillCorrectLogin(String email, String password) {
+
         fillLogin(email, password);
         return new LoggedHomePage(driver);
     }

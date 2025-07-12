@@ -2,11 +2,14 @@ package tests;
 
 
 import io.qameta.allure.*;
-import org.json.simple.parser.ParseException;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.HomePage;
+import pages.LoginSignupPage;
+import utils.JSONReader;
 
 import java.io.IOException;
+import java.text.ParseException;
 
 @Epic("Regression Tests")
 @Feature("User")
@@ -25,14 +28,24 @@ public class TestCase2 extends TestBasic{
             8. Verify that 'Logged in as username' is visible""")
     public static void loginUserWithCorrectEmailAndPassword() throws IOException, ParseException {
         TestCase1.verifyThatHomePageIsVisibleSuccessfully();
-        verifyLoginToYourAccountIsVisible();
         verifyThatLoggedInAsUsernameIsVisible();
+        verifyLoginToYourAccountIsVisible();
+
     }
 
+    @Step("Verify 'Login to your account' is visible")
     private static void verifyThatLoggedInAsUsernameIsVisible() {
+        String loginToYourAccount = new HomePage(getDriver()).signupLoginClick().getLoginToYourAccount().getText();
+        Assert.assertEquals(loginToYourAccount,"Login to your account","Verify 'Login to your account' is visible");
+
     }
 
-    private static void verifyLoginToYourAccountIsVisible() {
+    @Step("Verify that 'Logged in as username' is visible")
+    private static void verifyLoginToYourAccountIsVisible() throws IOException, java.text.ParseException {
+
+        String username = new LoginSignupPage(getDriver()).fillCorrectLogin(JSONReader.existingUser("email"),JSONReader.existingUser("password")).getUsername().getText();
+        Assert.assertEquals(username,"Verify that 'Logged in as username' is visible");
+
     }
 
 }
