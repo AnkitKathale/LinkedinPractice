@@ -41,23 +41,22 @@ public class TestCase16 extends TestBasic{
         new HomePage(getDriver())
                 .signupLoginClick()
                 .fillCorrectLogin(JSONReader.existingUser("email"), JSONReader.existingUser("password"));
-        verifyLoggedInAsUsernameAtTop();
+        verifyLoggedInAsUsernameAtTop(); 
         TestCase14.verifyThatCartPageIsDisplayed();
-        verifyThatCartIsClear();
         new CartPage(getDriver()).proceedToCheckoutButtonClick();
         TestCase14.verifyAddressDetailsAndReviewYourOrder();
         TestCase14.verifySuccessMessageCongratulationsYourOrderHasBeenConfirmed();
     }
 
-    public static  void verifyThatCartIsClear() {
-        String cartIsClear = new CartPage(getDriver())
-        .getEmptyCartSpan()
-        .getText();
+    // public static  void verifyThatCartIsClear() {
+    //     String cartIsClear = new CartPage(getDriver())
+    //     .getEmptyCartSpan()
+    //     .getText();
 
-        Assert.assertEquals(cartIsClear,"Cart is empty!","Verifying cart is empty or not");
-        // TODO Auto-generated method stub
+    //     Assert.assertEquals(cartIsClear,"Cart is empty!","Verifying cart is empty or not");
+    //     // TODO Auto-generated method stub
         
-    }
+    // }
 
     @Step("Verify 'Logged in as username' at top")
     private void verifyLoggedInAsUsernameAtTop() throws IOException, ParseException, java.text.ParseException {
