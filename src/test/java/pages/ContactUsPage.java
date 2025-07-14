@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import java.io.File;
+
 public class ContactUsPage {
     @FindBy(css = "h2.title:nth-child(2)")
     private WebElement getInTouch;
@@ -51,7 +53,7 @@ public class ContactUsPage {
         messageInput.sendKeys("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc lobortis eros eget cursus placerat. " +
                 "Pellentesque id porttitor est. Morbi aliquet massa sit amet finibus fermentum. Pellentesque eu ante a nunc pulvinar blandit a a orci." +
                 " Mauris massa tellus, posuere vitae ante vel, feugiat sodales ante. Suspendisse commodo diam venenatis scelerisque ornare.");
-        uploadFileInput.sendKeys(System.getProperty("user.dir") + "\\src\\test\\resources\\sample.txt");
+        uploadFileInput.sendKeys(new File("src/resources/sample.txt").getAbsolutePath());
         return this;
     }
 
