@@ -8,6 +8,7 @@ import utils.SeleniumHelper;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.time.Duration;
 
 public class PaymentPage {
     @FindBy(css = "input[data-qa='name-on-card']")
@@ -58,6 +59,7 @@ public class PaymentPage {
     }
 
     public WebElement getSuccessMessage() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         return successMessage;
     }
 
