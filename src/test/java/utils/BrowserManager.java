@@ -20,7 +20,7 @@ public class BrowserManager {
             System.setProperty("webdriver.chrome.silentOutput","true");
             ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("load-extension=" + pathExtension); //uBlock Origin
-//            chromeOptions.addArguments("--headless");
+            chromeOptions.addArguments("--headless");
             driver = new ChromeDriver(chromeOptions);
         } else if (name.equalsIgnoreCase("Firefox")) {
             FirefoxOptions firefoxOptions = new FirefoxOptions();
