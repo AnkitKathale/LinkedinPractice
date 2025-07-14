@@ -1,15 +1,15 @@
 {
-  "firstName": "Robert",
-  "lastName": "Rozwadowski",
-  "day": "1",
-  "month": "3",
-  "year": "1996",
-  "company": "Pierogi",
+  "firstName": "Ankit",
+  "lastName": "Kathale",
+  "day": "2",
+  "month": "6",
+  "year": "2000",
+  "company": "KWANTA",
   "address1": "1134 Columbia Road",
   "address2": "Most",
   "country": "United States",
-  "state": "Texas",
-  "city": "Dallas",
-  "zipcode": "98607",
-  "mobileNumber": "111222333"
+  "state": "Dallas",
+  "city": "Texas",
+  "zipcode": "410206",
+  "mobileNumber": "8108983221"
 }
