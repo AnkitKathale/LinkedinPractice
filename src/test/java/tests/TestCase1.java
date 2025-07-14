@@ -80,7 +80,7 @@ public class TestCase1 extends TestBasic{
         Assert.assertEquals(username, name, "Verify that 'Logged in as username' is visible");
     }
     @Step("Verify that 'ACCOUNT DELETED!' is visible and click 'Continue' button")
-    public void verifyThatAccountDeletedIsVisibleAndClickContinueButton(){
+    public static void verifyThatAccountDeletedIsVisibleAndClickContinueButton(){
         String accountDeletedText = new LoggedHomePage(getDriver())
                 .deleteAccountButtonClick()
                 .getAccountDeleted()
