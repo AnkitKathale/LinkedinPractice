@@ -7,7 +7,7 @@ import pages.LoggedHomePage;
 import java.io.IOException;
 import java.text.ParseException;
 
-public class TestClass4 extends TestBasic {
+public class TestCase4 extends TestBasic {
     @Test(description = "Test Case 4: Logout User")
     @Severity(SeverityLevel.CRITICAL)
     @Story("Logout User")
