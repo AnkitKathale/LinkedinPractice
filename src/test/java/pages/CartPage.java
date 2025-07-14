@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 
 public class CartPage {
 
+   
+
     @FindBy(xpath = "//td[contains(@class, 'cart_description')]//a")
     private List<WebElement> productName;
 
@@ -50,6 +52,8 @@ public class CartPage {
         PageFactory.initElements(driver, this);
         this.driver = driver;
     }
+
+
 
     public List<String> getProductsNames() {
         return productName

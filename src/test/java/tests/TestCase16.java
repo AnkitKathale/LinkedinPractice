@@ -43,9 +43,20 @@ public class TestCase16 extends TestBasic{
                 .fillCorrectLogin(JSONReader.existingUser("email"), JSONReader.existingUser("password"));
         verifyLoggedInAsUsernameAtTop();
         TestCase14.verifyThatCartPageIsDisplayed();
+        verifyThatCartIsClear();
         new CartPage(getDriver()).proceedToCheckoutButtonClick();
         TestCase14.verifyAddressDetailsAndReviewYourOrder();
         TestCase14.verifySuccessMessageCongratulationsYourOrderHasBeenConfirmed();
+    }
+
+    public static  void verifyThatCartIsClear() {
+        String cartIsClear = new CartPage(getDriver())
+        .getEmptyCartSpan()
+        .getText();
+
+        Assert.assertEquals(cartIsClear,"Cart is empty!","Verifying cart is empty or not");
+        // TODO Auto-generated method stub
+        
     }
 
     @Step("Verify 'Logged in as username' at top")
