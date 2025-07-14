@@ -1,4 +1,5 @@
 package pages;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -8,6 +9,7 @@ import utils.SeleniumHelper;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.time.Duration;
 
 public class ProductDetailPage {
 
@@ -64,6 +66,7 @@ public class ProductDetailPage {
     }
 
     public WebElement getProductName() {
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
         return productName;
     }
 
