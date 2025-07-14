@@ -44,7 +44,7 @@ public class TestCase2 extends TestBasic{
     static void verifyLoginToYourAccountIsVisible() throws IOException, java.text.ParseException {
 
         String username = new LoginSignupPage(getDriver()).fillCorrectLogin(JSONReader.existingUser("email"),JSONReader.existingUser("password")).getUsername().getText();
-        Assert.assertEquals(username,"Verify that 'Logged in as username' is visible");
+        Assert.assertEquals(username,JSONReader.existingUser("name"),"Verify that 'Logged in as username' is visible");
 
     }
 
