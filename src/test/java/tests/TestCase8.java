@@ -34,7 +34,7 @@ public class TestCase8 extends TestBasic{
 
     }
     @Step("Verify user is navigated to ALL PRODUCTS page successfully")
-    private void verifyThatDetailDetailIsVisible() {
+    public static void verifyThatDetailDetailIsVisible() {
         String allProductsText = new HomePage(getDriver())
                 .productsButtonClick()
                 .getTitleTextCenter()
