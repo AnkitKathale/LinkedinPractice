@@ -42,7 +42,7 @@ public class TestCase8 extends TestBasic{
         Assert.assertEquals(allProductsText, "ALL PRODUCTS", "Verify user is navigated to ALL PRODUCTS page successfully");
     }
     @Step("Verify that detail detail is visible: product name, category, price, availability, condition, brand")
-    private void verifyUserIsNavigatedToAllProductsPageSuccessfully() {
+    public static void verifyUserIsNavigatedToAllProductsPageSuccessfully() {
         boolean name = new ProductDetailPage(getDriver()).getProductName().isDisplayed();
         boolean category = new ProductDetailPage(getDriver()).getProductCategory().isDisplayed();
         boolean price = new ProductDetailPage(getDriver()).getProductPrice().isDisplayed();
