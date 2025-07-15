@@ -42,5 +42,5 @@ build/
 automation_exercise/.idea/workspace.xml
 .idea/workspace.xml
 .idea/workspace.xml
-allure-results/41bdb1f9-f430-4f90-a37d-10f1fd5b4ed3-result.json
-/allure-results
+
+*.json
