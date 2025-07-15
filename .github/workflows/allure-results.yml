@@ -25,12 +25,24 @@ jobs:
       - name: 🛠️ Build with Maven
         run: mvn clean test
 
+      - name: Download TestNG
+        run: |
+          mkdir libs
+          curl -L -o libs/testng.jar https://repo1.maven.org/maven2/org/testng/testng/7.9.0/testng-7.9.0.jar  # Download TestNG JAR
+      - name: Install dependencies
+        run: |
+          mvn install  # If you're using Maven, this installs dependencies (adjust if using Gradle or other)
+      - name: Run TestNG Suite
+        run: |
+          java -cp "libs/testng.jar;out" org.testng.TestNG testing.xml  # Running the test suite from the xml
+
+
       - name: 📝 Generate Allure Report to docs/
         run: |
           wget https://github.com/allure-framework/allure2/releases/download/2.24.0/allure-2.24.0.tgz
           tar -zxvf allure-2.24.0.tgz
           export PATH=$PWD/allure-2.24.0/bin:$PATH
-          allure generate target/allure-results --clean -o docs
+          allure generate allure-results --clean -o docs
 
       - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
